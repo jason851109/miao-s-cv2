@@ -672,14 +672,14 @@ footer {
     }
 
     .copyright {
-        bottom: 1%;
+        bottom: 1.5%;
         right: initial;
         left: 2.5%;
     }
 
     .perm-item {
         right: 2.5%;
-        bottom: 1%;
+        bottom: 1.5%;
         left: initial;
         text-align: right;
     }
@@ -752,5 +752,8 @@ footer {
     .footer-info img {
         display: inline-block;
         width: 31vw;
+    }
+    body {
+        background-size: calc(100% / 4);
     }
 }
