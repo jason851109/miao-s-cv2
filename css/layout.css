@@ -732,4 +732,7 @@ footer {
     body {
         background-size: calc(100% / 4);
     }
+    .footer-img img{
+        width: 140%;
+    }
 }
