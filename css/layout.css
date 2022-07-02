@@ -218,34 +218,6 @@ h1 .big-words {
     line-height: 0.6;
 }
 
-.fade-in-1 {
-    opacity: 0;
-    animation: fade-in 2s ease 0s forwards;
-    animation-iteration-count: 1;
-}
-
-.fade-in-2 {
-    opacity: 0;
-    animation: fade-in 2s ease 1.5s forwards;
-    animation-iteration-count: 1;
-}
-
-.fade-in-3 {
-    opacity: 0;
-    animation: fade-in 2s ease 3s forwards;
-    animation-iteration-count: 1;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-
-    }
-}
 
 h3 {
     font-size: 1.2vw;
@@ -631,7 +603,7 @@ footer {
     }
 
     h3 {
-        font-size: 7.2vw;
+        font-size: 5.4vw;
         line-height: 1.4;
         color: rgb(0, 0, 0);
     }
@@ -641,13 +613,13 @@ footer {
     }
 
     .works-item {
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: flex-start;
     }
 
     .works:nth-child(odd) .works-item {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .banner {
@@ -655,11 +627,11 @@ footer {
     }
 
     .banner2 {
-        padding: 7vh 0;
+        padding: 16vh 0;
     }
 
     header {
-        font-size: 12vw;
+        font-size: 22vw;
     }
 
     .works {
@@ -692,7 +664,7 @@ footer {
     }
 
     .perm-item ul li a span {
-        font-size: 7.6vw;
+        font-size: 6.5vw;
     }
 
     .scroll-down p,
@@ -747,6 +719,7 @@ footer {
     }
     .footer-title {
         width: 100%;
+        margin: 4vh 0;
     }
     .footer-info li {
         font-size: 5vw;
