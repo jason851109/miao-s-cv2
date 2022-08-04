@@ -518,6 +518,7 @@ header {
     transition: .5s all;
     opacity: 0;
     z-index: 0;
+    
 }
 
 .perm-item ul>li>a:hover::after {
@@ -591,7 +592,11 @@ footer {
     margin: 2vh 0;
     color: #fff;
 }
-
+@media screen and (max-width: 1440px) {
+    header{
+        margin-top: 24px;
+    }
+}
 @media screen and (min-width: 768px) {
     .mobile{
         display: none;
