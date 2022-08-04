@@ -791,7 +791,7 @@ footer {
     .section-2 blockquote {
         font-size: 44px;
         line-height: 1.2;
-        padding: 12px;
+        padding: 120px 12px;
         text-align: center;
     }
     .section-2 blockquote cite {
