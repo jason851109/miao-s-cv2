@@ -100,8 +100,7 @@ body {
 .perm-item ul li a {
     position: relative;
     display: inline-block;
-    background-color: #000;
-    border: 1px solid var(--text-white);
+    background-color: var(--text-white);
     transition: .5s all;
     padding: 0 8px;
 }
@@ -112,7 +111,7 @@ body {
     font-weight: 500;
     display: inline-block;
     line-height: 1.4;
-    color: var(--text-white);
+    color: var(--text-color);
     transition: .5s all;
     z-index: 10;
 }
@@ -155,12 +154,11 @@ body {
 
 .copyright span {
     font-size: 1.6vw;
-    border: 1px solid var(--text-white);
-    background-color: #000;
+    background-color: var(--text-white);
     display: inline-block;
     padding: 0 8px;
     line-height: 1.4;
-    color: var(--text-white);
+    color: var(--text-color);
     font-family: 'Tangerine', cursive;
 }
 
@@ -287,28 +285,39 @@ span.icon {
 
 .scroll-down {
     text-align: center;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    bottom: 20%;
+    bottom: 5%;
+    width: 200px;
+    align-items: center;
+    gap: 30px;
 }
-
-.scroll-down p,
+.scroll-down div{
+    height: 40px;
+    overflow: hidden;
+}
 .scroll-down h2 {
-    font-size: 3vw;
+    font-size: 40px;
     font-family: 'Tangerine', cursive;
     position: relative;
+    animation: scrollAni 1s ease-out infinite;
+}
+@keyframes scrollAni {
+    0% {
+        top: -40px;
+    }
+    100% {
+        top: 0;
+    }
 }
 
-.scroll-down h2::before {
-    content: '';
-    position: absolute;
-    bottom: -120px;
-    left: 50%;
-    transform: translateX(-50%);
+.scroll-down span {
     width: 1px;
     height: 12vh;
+    display: inline-block;
     background-color: #383E56;
 }
 
@@ -499,7 +508,7 @@ footer {
 
 @media screen and (max-width: 767px) {
     .banner {
-        height: 80vh;
+        height: 90vh;
     }
     h1 {
         font-size: 8vw;
@@ -507,7 +516,8 @@ footer {
     }
 
     h2 .big-words {
-        font-size: 25vw !important;
+        line-height: 0.8;
+        font-size: 28vw !important;
     }
 
     h3 {
@@ -520,10 +530,18 @@ footer {
         text-align: center;
     }
     .scroll-down{
-        bottom: 8%;
+        bottom: 4%;
+        gap: 12px;
     }
     .scroll-down h2::before {
         bottom: -120px;
+    }
+    .banner .text .welcome{
+        padding: 0 4vw;
+        gap: 12px;
+    }
+    .ml7 .letter{
+        line-height: 0.8;
     }
     .uiux {
         min-height: inherit;
@@ -606,10 +624,6 @@ footer {
     .scroll-down p,
     .scroll-down h2 {
         font-size: 11vw;
-    }
-
-    .scroll-down {
-        margin: 6vh 0 12vh;
     }
 
     .vec-img-01 {
