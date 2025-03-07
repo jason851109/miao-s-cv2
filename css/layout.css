@@ -562,6 +562,7 @@ footer {
 
     .works-container{
         padding: 8vh 0;
+        gap: 60px;
     }
 
     .works-container .title-container {
