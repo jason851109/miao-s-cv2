@@ -399,7 +399,6 @@ header {
     align-items: center;
     justify-content: center;
 }
-
 .works{
     margin-bottom: 80px;
 }
@@ -650,6 +649,8 @@ footer {
     }
     .works-title{
         display: inline-block;
+        font-size: 8vw;
+        line-height: 1.2;
     }
     h1 {
         font-size: 11vw;
@@ -807,7 +808,7 @@ footer {
     .section-2 blockquote {
         font-size: 44px;
         line-height: 1.2;
-        padding: 8vh 0 4vh;
+        padding: 8vh 8vw 4vh;
         text-align: center;
     }
     .section-2 blockquote cite {
