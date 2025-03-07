@@ -1,124 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Tangerine:wght@400;700&display=swap');
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+/* 定義 CSS 變數 */
+:root {
+    --main-bg: #EEDAD1;
+    --text-color: #000;
+    --text-white: #fff;
+    --highlight: #ffc83d;
+}
+
+/* 重置樣式 */
+:where(*) {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: 'Arial', 'Helvetica','Roboto', 'Noto Sans TC', '微軟正黑體';
-    letter-spacing: 0em;
+    font-family: Arial, Helvetica, Roboto, 'Noto Sans TC', '微軟正黑體';
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
+/* 預設標籤樣式 */
+body {
+    line-height: 1;
+    background: var(--main-bg);
+    color: var(--text-color);
+    animation: bg-change-color 25s infinite ease-in-out;
 }
-.text-end{
-    text-align: right;
-}
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-ol,
-ul,
-li {
+ul, ol, li {
     list-style: none;
 }
 
+::selection {
+    color: var(--text-color);
+    background: var(--highlight);
+}
 blockquote,
 q {
     quotes: none;
@@ -146,37 +67,13 @@ body {
     animation: bg-change-color 25s infinite ease-in-out;
 }
 
+/* 背景顏色變換動畫 */
 @keyframes bg-change-color {
-    0% {
-        background-color: #EEDAD1;
-
-
-    }
-
-    20% {
-        background-color: #e1eed1;
-
-    }
-
-    40% {
-        background-color: #d1eeea;
-
-    }
-
-    60% {
-        background-color: #d3d1ee;
-
-    }
-
-    80% {
-        background-color: #eed1e4;
-
-    }
-
-    100% {
-        background-color: #EEDAD1;
-
-    }
+    0%, 100% { background-color: var(--main-bg); }
+    20% { background-color: #e1eed1; }
+    40% { background-color: #d1eeea; }
+    60% { background-color: #d3d1ee; }
+    80% { background-color: #eed1e4; }
 }
 
 
@@ -187,6 +84,84 @@ body {
 ::selection {
     color: #000;
     background: #ffc83d;
+}
+/* 常駐項 */
+.perm-item {
+    position: fixed;
+    left: 2.5%;
+    bottom: 3%;
+    z-index: 10000;
+}
+
+.perm-item ul li {
+    margin: 4px 0;
+}
+
+.perm-item ul li a {
+    position: relative;
+    display: inline-block;
+    background-color: #000;
+    border: 1px solid var(--text-white);
+    transition: .5s all;
+    padding: 0 8px;
+}
+
+.perm-item ul li a span {
+    position: relative;
+    font-size: 1.6vw;
+    font-weight: 500;
+    display: inline-block;
+    line-height: 1.4;
+    color: var(--text-white);
+    transition: .5s all;
+    z-index: 10;
+}
+
+.perm-item ul li a:hover {
+    padding: 0 16px;
+}
+
+.perm-item ul li a:hover>span {
+    position: relative;
+    color: #000;
+    z-index: 1000000;
+}
+
+.perm-item ul li>a::after {
+    content: '';
+    position: absolute;
+    background-color: #ffc83d;
+    left: 0;
+    width: 0;
+    height: 100%;
+    top: 0;
+    transition: .5s all;
+    opacity: 0;
+    z-index: 0;
+    
+}
+
+.perm-item ul>li>a:hover::after {
+    opacity: 1;
+    width: 100%;
+}
+
+.copyright {
+    position: fixed;
+    right: 2.5%;
+    bottom: 4%;
+    z-index: 10000;
+}
+
+.copyright span {
+    font-size: 1.6vw;
+    border: 1px solid var(--text-white);
+    background-color: #000;
+    display: inline-block;
+    padding: 0 8px;
+    line-height: 1.4;
+    color: var(--text-white);
+    font-family: 'Tangerine', cursive;
 }
 
 /* banner */
@@ -293,23 +268,8 @@ span.icon {
 }
 
 @keyframes rotate {
-    0% {
-        transform-origin: left bottom;
-        transform: rotate(0);
-        opacity: 0.2;
-    }
-
-    50% {
-        transform-origin: left bottom;
-        opacity: 0.5;
-        transform: rotate(22deg);
-    }
-
-    100% {
-        transform-origin: left bottom;
-        opacity: 0.2;
-        transform: rotate(0deg);
-    }
+    0%, 100% { transform: rotate(0); opacity: 0.2; }
+    50% { transform: rotate(22deg); opacity: 0.5; }
 }
 
 .banner .text {
@@ -321,15 +281,7 @@ span.icon {
     
 }
 
-.banner2 {
-    width: 100%;
-    min-height: 150vh;
-    background-color: #000;
-    padding: 24vh 0;
-    overflow: hidden;
-}
-
-.welcome {
+.banner .text .welcome {
     text-align: left;
     padding: 0 10vw;
     display: flex;
@@ -374,21 +326,28 @@ span.icon {
 
 /* 作品 */
 
-header {
-    color: #fff;
+.works-container{
+    width: 100%;
+    min-height: 150vh;
+    background-color: #000;
+    padding: 24vh 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.title-container {
+    color: var(--text-white);
     text-align: center;
     font-size: 8vw;
     top: 0;
     position: relative;
-    margin-bottom: 40px;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.works{
-    margin-bottom: 80px;
-}
+
 .works-item {
     display: flex;
     align-items: center;
@@ -406,7 +365,7 @@ header {
 
 .works-item .works-text {
     font-size: 2vw;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .works-item .works-text span {
@@ -443,11 +402,11 @@ header {
 .work-btn a {
     background-color: #000;
     display: inline-block;
-    color: #fff;
+    color: var(--text-white);
     padding: 1.2vh;
     font-size: 1.2vw;
     transition: 0.3s ease-in-out;
-    border: 1px solid #fff;
+    border: 1px solid var(--text-white);
     box-sizing: border-box;
 }
 
@@ -456,83 +415,36 @@ header {
     color: #000;
 }
 
-/* 常駐項 */
-.perm-item {
-    position: fixed;
-    left: 2.5%;
-    bottom: 3%;
-    z-index: 10000;
-}
 
-.perm-item ul li {
-    margin: 4px 0;
-}
 
-.perm-item ul li a {
-    position: relative;
-    display: inline-block;
-    background-color: #000;
-    border: 1px solid #fff;
-    transition: .5s all;
-    padding: 0 8px;
-}
+/* uiux */
 
-.perm-item ul li a span {
-    position: relative;
-    font-size: 1.6vw;
-    font-weight: 500;
-    display: inline-block;
-    line-height: 1.4;
-    color: #fff;
-    transition: .5s all;
-    z-index: 10;
+.uiux {
+    min-height: calc(320vh + 36px + 36px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 40% 60%;
 }
-
-.perm-item ul li a:hover {
-    padding: 0 16px;
+.uiux  blockquote {
+    font-size: 5vw;
+    line-height: 1.2;
+    text-align: right;
+    padding: 36px;
 }
-
-.perm-item ul li a:hover>span {
-    position: relative;
-    color: #000;
-    z-index: 1000000;
+.uiux  blockquote cite {
+    display: block;
+    font-size: 2vw;
+    margin-top: 36px;
 }
-
-.perm-item ul li>a::after {
-    content: '';
-    position: absolute;
-    background-color: #ffc83d;
-    left: 0;
-    width: 0;
-    height: 100%;
-    top: 0;
-    transition: .5s all;
-    opacity: 0;
-    z-index: 0;
-    
+.uiux .images-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
-
-.perm-item ul>li>a:hover::after {
-    opacity: 1;
+.uiux .images-container img {
     width: 100%;
-}
-
-.copyright {
-    position: fixed;
-    right: 2.5%;
-    bottom: 4%;
-    z-index: 10000;
-}
-
-.copyright span {
-    font-size: 1.6vw;
-    border: 1px solid #fff;
-    background-color: #000;
-    display: inline-block;
-    padding: 0 8px;
-    line-height: 1.4;
-    color: #fff;
-    font-family: 'Tangerine', cursive;
+    height: 100%;
+    align-self: stretch; 
+    object-fit: cover;
 }
 
 /* footer */
@@ -569,7 +481,7 @@ footer {
 }
 
 .footer .header-titles span {
-    color: #fff;
+    color: var(--text-white);
 }
 
 .footer-info img {
@@ -583,59 +495,14 @@ footer {
 
 .footer-info li {
     font-size: 1.2vw;
-    color: #fff;
+    color: var(--text-white);
     margin-bottom: 12px;
 }
 
 
-.section-2 {
-    min-height: calc(320vh + 36px + 36px);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-columns: 40% 60%;
-}
-.section-2  blockquote {
-    font-size: 7vw;
-    line-height: 1.2;
-    padding: 36px;
-}
-.section-2  blockquote cite {
-    display: block;
-    font-size: 2vw;
-    margin-top: 36px;
-}
-.section-2 .images-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-.section-2 .images-container img {
-    width: 100%;
-    height: 100%;
-    align-self: stretch; 
-    object-fit: cover;
-}
-@media screen and (max-width: 1880px) {
-}
-@media screen and (min-width: 768px) {
-    .mobile{
-        display: none;
-    }
-}
+
+
 @media screen and (max-width: 767px) {
-    .scroll-down{
-        bottom: 4%;
-    }
-    .section-2 {
-        min-height: inherit;
-    }
-    .web{
-        display: none !important;
-    }
-    .works-title{
-        display: inline-block;
-        font-size: 8vw;
-        line-height: 1.2;
-    }
     h1 {
         font-size: 8vw;
     }
@@ -649,6 +516,27 @@ footer {
         line-height: 1.4;
         color: rgb(0, 0, 0);
     }
+    .scroll-down{
+        bottom: 4%;
+    }
+    .uiux {
+        min-height: inherit;
+    }
+    .web{
+        display: none !important;
+    }
+    .works-title{
+        display: inline-block;
+        font-size: 6vw;
+        line-height: 1.2;
+    }
+    .works-item .works-text span {
+        font-size: 4vw;
+    }
+
+    .work-btn{
+        display: none;
+    }
 
     .work-img {
         width: 100%;
@@ -659,25 +547,21 @@ footer {
         justify-content: center;
         align-items: flex-start;
         padding: 0 40px;
-        gap: 20px;
+        gap: 12px;
     }
 
     .works:nth-child(odd) .works-item {
         flex-direction: column;
     }
 
-    .banner2 {
+    .works-container{
         padding: 8vh 0;
     }
 
-    header {
+    .title-container {
         font-size: 22vw;
-        margin-bottom: 24px;
     }
 
-    .works {
-        margin: 0 0 8vh 0;
-    }
     .works:last-child {
         margin: 0;
     }
@@ -748,9 +632,7 @@ footer {
     .work-btn a {
         font-size: 4vw;
     }
-    .works-item .works-text span {
-        font-size: 5vw;
-    }
+
     .footer{
         flex-direction: column-reverse;
     }
@@ -759,16 +641,16 @@ footer {
         height: 40vh;
     }
     .footer-title header {
-        font-size: 8vw;
-        padding: 0 4vw;
+        font-size: 6vw;
+        padding: 0 8vw;
     }
     .footer-title {
         width: 100%;
-        margin: 4vh 0;
+        margin: 8vh 0;
     }
     .footer-info li {
-        font-size: 5vw;
-        margin: 2vh;
+        padding: 0 8vw;
+        font-size: 4vw;
     }
     .footer-info img {
         display: inline-block;
@@ -780,22 +662,22 @@ footer {
     .footer-img img{
         width: 140%;
     }
-    .section-2 {
+    .uiux {
         height: initial;
         display: inline-block;
     }
-    .section-2 blockquote {
+    .uiux blockquote {
         font-size: 44px;
         line-height: 1.2;
         padding: 8vh 8vw 4vh;
         text-align: center;
     }
-    .section-2 blockquote cite {
+    .uiux blockquote cite {
         display: block;
         font-size: 24px;
         margin-top: 12px;
     }
-    .section-2 .images-container {
+    .uiux .images-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
