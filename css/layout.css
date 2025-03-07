@@ -87,8 +87,8 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0.02em;
+    font-family: 'Arial', 'Helvetica','Roboto', 'Noto Sans TC', '微軟正黑體';
+    letter-spacing: 0em;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -208,7 +208,7 @@ h1 .big-words {
 .ml7 .text-wrapper {
     position: relative;
     display: inline-block;
-    padding-top: 0.2em;
+    padding-top: 0.5em;
     padding-right: 0.05em;
     padding-bottom: 0.1em;
     overflow: hidden;
@@ -389,11 +389,11 @@ span.icon {
 
 header {
     color: #fff;
-    font-family: 'Cormorant Garamond', serif;
     text-align: center;
     font-size: 8vw;
     top: 0;
     position: relative;
+    margin-bottom: 40px;
     z-index: 999;
     display: flex;
     align-items: center;
@@ -495,7 +495,7 @@ header {
 .perm-item ul li a span {
     position: relative;
     font-size: 1.6vw;
-    font-weight: 800;
+    font-weight: 500;
     display: inline-block;
     line-height: 1.4;
     color: #fff;
@@ -627,10 +627,6 @@ footer {
     object-fit: cover;
 }
 @media screen and (max-width: 1880px) {
-    .section-2 .images-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
 }
 @media screen and (min-width: 768px) {
     .mobile{
