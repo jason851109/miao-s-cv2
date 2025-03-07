@@ -508,7 +508,9 @@ footer {
 
 @media screen and (max-width: 767px) {
     .banner {
-        height: 90vh;
+        height: 50vh;
+        padding: 21vh 0;
+        align-items: baseline;
     }
     h1 {
         font-size: 8vw;
