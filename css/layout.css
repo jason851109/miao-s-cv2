@@ -641,7 +641,7 @@ footer {
     }
 
     h2 .big-words {
-        font-size: 25vw;
+        font-size: 25vw !important;
     }
 
     h3 {
