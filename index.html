@@ -456,11 +456,29 @@
                 easing: "easeOutExpo",
                 delay: 2000
             });
-            
+
         const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
-        });
+        const hoverTargets = document.querySelectorAll('a'); // 選擇所有 <a> 標籤
+
+        if (cursor && hoverTargets.length > 0) {
+            // 滑鼠移動事件
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+            });
+
+            // 對每個 <a> 標籤添加事件監聽器
+            hoverTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => {
+                    cursor.style.width = "60px";
+                    cursor.style.height = "60px";
+                });
+
+                target.addEventListener('mouseleave', () => {
+                    cursor.style.width = "40px";
+                    cursor.style.height = "40px";
+                });
+            });
+        }
     </script>
 
     <!-- js_end -->

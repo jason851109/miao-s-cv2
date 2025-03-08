@@ -35,15 +35,15 @@ body {
     position: absolute;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition: transform 0s ease-out;
+    transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
     mix-blend-mode: difference;
     z-index: 1000;
 }
 a {
     text-decoration: none;
     color: inherit;
+    cursor: none;
 }
-
 ul, ol, li {
     list-style: none;
 }
@@ -102,6 +102,7 @@ body {
     position: fixed;
     left: 2.5%;
     bottom: 3%;
+    mix-blend-mode: difference;
     z-index: 100;
 }
 
@@ -161,16 +162,17 @@ body {
     position: fixed;
     right: 2.5%;
     bottom: 4%;
+    mix-blend-mode: difference;
     z-index: 100;
 }
 
 .copyright span {
     font-size: 1.6vw;
-    background-color: var(--text-white);
+    /* background-color: var(--text-white); */
     display: inline-block;
     padding: 0 8px;
     line-height: 1.4;
-    color: var(--text-color);
+    color: var(--text-white);
     font-family: 'Tangerine', cursive;
 }
 
@@ -342,7 +344,7 @@ span.icon {
     display: inline-block;
 }
 
-/* 作品 */
+/* Works */
 
 .works-container{
     width: 100%;
@@ -363,6 +365,7 @@ span.icon {
     z-index: 50;
     display: flex;
     align-items: center;
+    mix-blend-mode: difference;
     justify-content: center;
 }
 
