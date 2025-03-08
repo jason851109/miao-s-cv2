@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="custom-cursor"></div>
     <div class="perm-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="2300" data-aos-offset="0">
         <ul>
             <li>
@@ -88,7 +89,7 @@
                         <img src="img/1x/SVG/svg-04.svg" alt="" data-scroll data-scroll-speed="2">
                     </div>
                     <div class="scroll-down animate__animated animate__fadeIn animate__delay-2s">
-                        <div data-scroll data-scroll-speed="1" >
+                        <div data-scroll data-scroll-speed="1">
                             <h2>
                                 Here we Go!!!
                             </h2>
@@ -103,8 +104,8 @@
             <section data-scroll-section class="">
                 <div class="works-container">
                     <div class="title-container">
-                        <header data-scroll data-scroll-sticky data-scroll-target=".works-container" data-scroll-offset="150"
-                            class="header-titles">
+                        <header data-scroll data-scroll-sticky data-scroll-target=".works-container"
+                            data-scroll-offset="150" class="header-titles">
                             <span>
                                 Works
                             </span>
@@ -143,22 +144,19 @@
                         <div class="contaniner">
                             <div class="works-item">
                                 <div class="work-img">
-                                    <a class="img-inner"
-                                        href="https://xa.mangot5.com/game/xa/preSignupFriend/index"
+                                    <a class="img-inner" href="https://xa.mangot5.com/game/xa/preSignupFriend/index"
                                         target="_blank">
                                         <img src="img/game-02.png" alt="">
                                     </a>
 
                                 </div>
                                 <div class="works-text">
-                                    <a class="works-title"
-                                        href="https://xa.mangot5.com/game/xa/preSignupFriend/index"
+                                    <a class="works-title" href="https://xa.mangot5.com/game/xa/preSignupFriend/index"
                                         target="_blank">
                                         笑傲江湖4K Online 事前預約<br><span>Web Design & Front-end</span>
                                     </a>
                                     <div class="work-btn">
-                                        <a href="https://xa.mangot5.com/game/xa/preSignupFriend/index"
-                                            target="_blank">
+                                        <a href="https://xa.mangot5.com/game/xa/preSignupFriend/index" target="_blank">
                                             See More 👉
                                         </a>
                                     </div>
@@ -228,22 +226,17 @@
                             <div class="works-item">
 
                                 <div class="works-text">
-                                    <a class="works-title"
-                                        href="https://www.wits.com/tw/"
-                                        target="_blank">
+                                    <a class="works-title" href="https://www.wits.com/tw/" target="_blank">
                                         緯創軟體 WITS <br><span>Web Design</span>
                                     </a>
                                     <div class="work-btn">
-                                        <a href="https://www.wits.com/tw/"
-                                            target="_blank">
+                                        <a href="https://www.wits.com/tw/" target="_blank">
                                             See More 👉
                                         </a>
                                     </div>
                                 </div>
                                 <div class="work-img">
-                                    <a class="img-inner"
-                                        href="https://www.wits.com/tw/"
-                                        target="_blank">
+                                    <a class="img-inner" href="https://www.wits.com/tw/" target="_blank">
                                         <img src="img/wits-2.jpg" alt="">
                                     </a>
                                 </div>
@@ -255,22 +248,17 @@
                         <div class="contaniner">
                             <div class="works-item">
                                 <div class="work-img">
-                                    <a class="img-inner"
-                                        href="https://www.symsightsgrp.com/"
-                                        target="_blank">
+                                    <a class="img-inner" href="https://www.symsightsgrp.com/" target="_blank">
                                         <img src="img/symsights.jpg" alt="">
                                     </a>
 
                                 </div>
                                 <div class="works-text">
-                                    <a class="works-title"
-                                        href="https://www.symsightsgrp.com/"
-                                        target="_blank">
+                                    <a class="works-title" href="https://www.symsightsgrp.com/" target="_blank">
                                         淵暘公關 Symsights<br><span>Web Design</span>
                                     </a>
                                     <div class="work-btn">
-                                        <a href="https://www.symsightsgrp.com/"
-                                            target="_blank">
+                                        <a href="https://www.symsightsgrp.com/" target="_blank">
                                             See More 👉
                                         </a>
                                     </div>
@@ -337,7 +325,8 @@
                         </div>
                     </div>
                     <!-- works07-->
-                    <div class="works" id="works-3" data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">
+                    <div class="works" id="works-3" data-scroll data-scroll-speed="1"
+                        data-scroll-direction="horizontal">
                         <div class="contaniner">
                             <div class="works-item">
                                 <div class="works-text">
@@ -358,11 +347,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </section>
-            
+
             <section class="uiux" data-scroll-section>
                 <div id="pinSection" class="pinned-quote">
                     <blockquote data-scroll data-scroll-sticky data-scroll-target="#pinSection" class="text-end">
@@ -391,7 +380,7 @@
 
                 </div>
             </section>
-            
+
         </main>
         <!-- main_content_end -->
 
@@ -422,7 +411,7 @@
 
             </div>
         </footer>
-        
+
         <!-- footer_end -->
     </div>
 
@@ -449,8 +438,8 @@
         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
         anime.timeline({
-            loop: false
-        })
+                loop: false
+            })
             .add({
                 targets: '.ml7 .letter',
                 translateY: ["1.1em", 0],
@@ -467,6 +456,11 @@
                 easing: "easeOutExpo",
                 delay: 2000
             });
+            
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+        });
     </script>
 
     <!-- js_end -->
