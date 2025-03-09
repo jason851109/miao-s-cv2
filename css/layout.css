@@ -662,9 +662,7 @@ footer {
     }
 
     .vec-img-03 {
-        width: 50vw;
-        bottom: -4vw;
-        right: -21vw;
+        display: none;
     }
 
     .vec-img-04 {
