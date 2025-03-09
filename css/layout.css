@@ -97,7 +97,7 @@ body {
     color: #000;
     background: #ffc83d;
 }
-/* 常駐項 */
+
 .perm-item {
     position: fixed;
     left: 2.5%;
@@ -150,7 +150,6 @@ body {
     transition: .5s all;
     opacity: 0;
     z-index: 0;
-    
 }
 
 .perm-item ul>li>a:hover::after {
@@ -224,11 +223,36 @@ h2 .big-words {
     line-height: 1;
 }
 
-
-h3 {
+.banner .banner-detail{
+    display: flex;
+}
+.banner .banner-detail p{
     font-size: 1.7vw;
     line-height: 1.4;
     color: rgb(0, 0, 0);
+    /* margin-inline: auto; */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid var(--text-color);
+    animation: typing 1.4s 1.6s steps(36) forwards,
+    blink 1s step-end infinite;
+    opacity: 0;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+        opacity: 1;
+    }
+    to{
+        opacity: 1;
+        width: 100%;
+    }
+}
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }    
 }
 
 p.lead {
@@ -305,13 +329,14 @@ span.icon {
     left:50%;
     transform: translateX(-50%);
     bottom: 5%;
-    width: 200px;
+    width: 240px;
     align-items: center;
     gap: 30px;
 }
 .scroll-down div{
     height: 40px;
     overflow: hidden;
+    width: 100%;
 }
 .scroll-down h2 {
     font-size: 40px;
@@ -407,32 +432,52 @@ span.icon {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
+    transition: 0.3s ease-in-out;
+    filter: grayscale(1);
     object-fit: cover;
 }
 
 .work-btn {
     display: block;
     margin-top: 2vh;
+    position: relative;
+    width: fit-content;
 }
 
 .work-btn a {
-    background-color: #000;
     display: inline-block;
     color: var(--text-white);
-    padding: 1.2vh;
+    padding: 2vh 2vw;
     font-size: 1.2vw;
     transition: 0.3s ease-in-out;
     border: 1px solid var(--text-white);
     box-sizing: border-box;
+    position: relative;
+}
+.work-btn::before {
+    content: '';
+    position: absolute;
+    background-color: #ffc83d;
+    left: 0;
+    width: 0;
+    height: 100%;
+    top: 0;
+    transition: .5s all;
+    opacity: 0;
+    z-index: 0;
+}
+
+.works:hover .works-item .works-text .work-btn::before {
+    opacity: 1;
+    width: 100%;
 }
 
 .works:hover .works-item .works-text .work-btn a {
-    background-color: #ffc83d;
-    color: #000;
+    color: var(--text-color);
 }
 
-.works:hover .img-inner {
-    filter: grayscale(1);
+.works:hover .img-inner img{
+    filter: inherit;
 }
 
 
@@ -465,7 +510,13 @@ span.icon {
     width: 100%;
     height: 100%;
     align-self: stretch; 
+    transition: 0.3s ease-in-out;
+    filter: grayscale(1);
     object-fit: cover;
+}
+.uiux .images-container img:hover{
+    filter: inherit;
+
 }
 
 /* footer */
@@ -542,9 +593,11 @@ footer {
         line-height: 0.8;
         font-size: 28vw !important;
     }
-
-    h3 {
-        font-size: 4vw;
+    .banner .banner-detail {
+        justify-content: center;
+    }
+    .banner .banner-detail p{
+        font-size: 4.5vw;
         line-height: 1.4;
         text-align: center;
         color: rgb(0, 0, 0);
@@ -674,7 +727,9 @@ footer {
     .work-btn a {
         font-size: 4vw;
     }
-
+    .img-inner>img {
+        filter: inherit;
+    }
     .footer{
         flex-direction: column-reverse;
     }
@@ -722,5 +777,8 @@ footer {
     .uiux .images-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .uiux .images-container img{
+        filter: inherit;
     }
 }
