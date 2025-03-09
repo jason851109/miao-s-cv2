@@ -277,8 +277,6 @@ span.icon {
     background: #e7d0ca;
 }
 
-
-
 .vec-img-01 {
     position: absolute;
     display: inline-block;
@@ -357,7 +355,7 @@ span.icon {
     width: 1px;
     height: 12vh;
     display: inline-block;
-    background-color: #383E56;
+    background-color: #898989;
 }
 
 .scroll-down img {
@@ -673,7 +671,7 @@ footer {
     }
 
     .copyright span {
-        font-size: 6.6vw;
+        font-size: 4vw;
     }
 
     .copyright {
