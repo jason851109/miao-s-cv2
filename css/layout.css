@@ -501,10 +501,21 @@ span.icon {
     gap: 1.4vw;
 }
 .game-banner .container .col{
+    width: 18%;
+    transition: 1s all;
+
+}
+.game-banner .container .col div{
+    width: 100%;
     display: flex;
-    width: 20%;
     flex-direction: column;
     gap: 1.4vw;
+}
+.game-banner .container .col div img{
+    width: 100%;
+}
+.game-banner .container .col:hover{
+    width: 20%;
 }
 
 /* uiux */
