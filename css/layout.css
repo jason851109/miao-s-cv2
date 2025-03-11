@@ -514,9 +514,6 @@ span.icon {
 .game-banner .container .col div img{
     width: 100%;
 }
-.game-banner .container .col:hover{
-    width: 20%;
-}
 
 /* uiux */
 
@@ -839,8 +836,5 @@ footer {
     .game-banner .title-container{
         font-size: 22vw;
         margin-bottom: 60px;
-    }
-    .game-banner .container .col:hover{
-        width: 40%;
     }
 }
