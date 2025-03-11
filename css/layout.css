@@ -27,6 +27,7 @@ body {
     animation: bg-change-color 25s infinite ease-in-out;
     cursor: none;
 }
+
 .custom-cursor {
     width: 40px;
     height: 40px;
@@ -39,12 +40,16 @@ body {
     mix-blend-mode: difference;
     z-index: 1000;
 }
+
 a {
     text-decoration: none;
     color: inherit;
     cursor: none;
 }
-ul, ol, li {
+
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -52,6 +57,7 @@ ul, ol, li {
     color: var(--text-color);
     background: var(--highlight);
 }
+
 blockquote,
 q {
     quotes: none;
@@ -81,16 +87,34 @@ body {
 
 /* 背景顏色變換動畫 */
 @keyframes bg-change-color {
-    0%, 100% { background-color: var(--main-bg); }
-    20% { background-color: #e1eed1; }
-    40% { background-color: #d1eeea; }
-    60% { background-color: #d3d1ee; }
-    80% { background-color: #eed1e4; }
+
+    0%,
+    100% {
+        background-color: var(--main-bg);
+    }
+
+    20% {
+        background-color: #e1eed1;
+    }
+
+    40% {
+        background-color: #d1eeea;
+    }
+
+    60% {
+        background-color: #d3d1ee;
+    }
+
+    80% {
+        background-color: #eed1e4;
+    }
 }
-.c-scrollbar{
+
+.c-scrollbar {
     mix-blend-mode: difference;
 }
-.c-scrollbar_thumb{
+
+.c-scrollbar_thumb {
     background-color: var(--text-white);
 }
 
@@ -102,7 +126,8 @@ body {
     color: #000;
     background: #ffc83d;
 }
-.nav{
+
+.nav {
     position: fixed;
     right: 3%;
     top: 4%;
@@ -111,7 +136,8 @@ body {
     display: flex;
     gap: 2vw;
 }
-.nav button{
+
+.nav button {
     position: relative;
     font-size: 1.6vw;
     font-weight: 500;
@@ -123,6 +149,7 @@ body {
     background-color: transparent;
     cursor: none;
 }
+
 .perm-item {
     position: fixed;
     left: 2.5%;
@@ -208,18 +235,21 @@ body {
     display: flex;
     align-items: center;
 }
+
 .banner .text {
     text-align: center;
     z-index: 2;
     position: relative;
     width: 100%;
 }
+
 .banner .text .welcome {
     text-align: left;
     padding: 0 10vw;
     display: flex;
     flex-direction: column;
 }
+
 h4 {
     margin: 0;
     font-size: 2.5vw;
@@ -247,10 +277,11 @@ h2 .big-words {
     line-height: 1;
 }
 
-.banner .banner-detail{
+.banner .banner-detail {
     display: flex;
 }
-.banner .banner-detail p{
+
+.banner .banner-detail p {
     font-size: 1.7vw;
     line-height: 1.4;
     color: rgb(0, 0, 0);
@@ -259,36 +290,81 @@ h2 .big-words {
     white-space: nowrap;
     border-right: 1px solid var(--text-color);
     animation: typing 1.4s 1.6s steps(36) forwards,
-    blink 1s step-end infinite;
+        blink 1s step-end infinite;
     opacity: 0;
 }
 
-.banner h1{
-    font-size: 1vw;
-    opacity: 0;
-    background-color: var(--text-color);
-    color: var(--text-white);
-    display: inline-block;
-    padding: .4vw .4vw;
+.is-inview {
+    opacity: 1 !important;
 }
-.banner h1.is-inview{
-    opacity: 1;
+
+.about {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    max-width: 960px;
+    margin: auto;
+}
+
+.about .quote {
+    font-size: 1.7vw;
+    line-height: 1.8;
+    color: var(--text-white);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0vw;
+    opacity: 0;
+    transition: 1s 0.2s ease;
+    gap: 40px;
+}
+
+.about .quote .mask {
+    mask: url("../img/profile-mask.png") no-repeat center center;
+    mask-size: contain;
+    width: 15vw;
+    height: 20vw;
+}
+
+.about .quote .mask img {
+    width: 110%;
+    height: auto;
+    transform-origin: center center;
+}
+
+.about .quote .detail {
+    display: flex;
+}
+
+.about .quote .detail span:first-child {
+    margin-right: 8px;
+}
+
+.about .quote .detail span:last-child {
+    margin-left: 8px;
+}
+
+.about .quote .intro {
+    font-size: 1.2vw;
 }
 
 @keyframes typing {
-    from{
+    from {
         width: 0;
         opacity: 1;
     }
-    to{
+
+    to {
         opacity: 1;
         width: 100%;
     }
 }
+
 @keyframes blink {
-    50%{
+    50% {
         border-color: transparent;
-    }    
+    }
 }
 
 p.lead {
@@ -351,8 +427,17 @@ span.icon {
 }
 
 @keyframes rotate {
-    0%, 100% { transform: rotate(0); opacity: 0.2; }
-    50% { transform: rotate(22deg); opacity: 0.5; }
+
+    0%,
+    100% {
+        transform: rotate(0);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: rotate(22deg);
+        opacity: 0.5;
+    }
 }
 
 .scroll-down {
@@ -360,28 +445,32 @@ span.icon {
     display: flex;
     flex-direction: column;
     position: absolute;
-    left:50%;
+    left: 50%;
     transform: translateX(-50%);
     bottom: 5%;
     width: 240px;
     align-items: center;
     gap: 30px;
 }
-.scroll-down div{
+
+.scroll-down div {
     height: 40px;
     overflow: hidden;
     width: 100%;
 }
-.scroll-down p{
+
+.scroll-down p {
     font-size: 40px;
     font-family: 'Tangerine', cursive;
     position: relative;
     animation: scrollAni 1s ease-out infinite;
 }
+
 @keyframes scrollAni {
     0% {
         top: -40px;
     }
+
     100% {
         top: 0;
     }
@@ -404,10 +493,11 @@ span.icon {
 }
 
 /* Works */
-.works-bg{
+.works-bg {
     background-color: #000;
 }
-.works-container{
+
+.works-container {
     width: 100%;
     padding: 24vh 0;
     overflow: hidden;
@@ -415,7 +505,9 @@ span.icon {
     flex-direction: column;
     gap: 160px;
 }
-.works-container .title-container,.game-banner .title-container{
+
+.works-container .title-container,
+.game-banner .title-container {
     color: var(--text-white);
     text-align: center;
     font-size: 8vw;
@@ -427,9 +519,11 @@ span.icon {
     mix-blend-mode: difference;
     justify-content: center;
 }
-.works-container .title-container header{
+
+.works-container .title-container header {
     padding-bottom: 54px;
 }
+
 .works-item {
     display: flex;
     align-items: center;
@@ -442,10 +536,28 @@ span.icon {
 .works-item .works-text {
     font-size: 2vw;
     color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.6vh;
 }
 
 .works-item .works-text span {
     font-size: 1.2vw;
+
+}
+
+.works-item .works-text .hashtag {
+    display: flex;
+    gap: 4px;
+}
+
+.works-item .works-text .hashtag span {
+    font-size: 0.8vw;
+    background-color: var(--text-white);
+    color: var(--text-color);
+    padding: 2px 4px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
 }
 
 .work-img {
@@ -473,16 +585,18 @@ span.icon {
     object-fit: cover;
     opacity: 0;
 }
+
 .works.is-inview .img-inner>img {
     filter: inherit;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.05);
 }
+
 .work-btn {
     display: block;
-    margin-top: 2vh;
     position: relative;
     width: fit-content;
+    margin-top: 24px;
 }
 
 .work-btn a {
@@ -495,6 +609,7 @@ span.icon {
     box-sizing: border-box;
     position: relative;
 }
+
 .work-btn::before {
     content: '';
     position: absolute;
@@ -517,32 +632,36 @@ span.icon {
     color: var(--text-color);
 }
 
-.works:hover .img-inner img{
+.works:hover .img-inner img {
     filter: inherit;
 }
 
 /* game-banner */
-.game-banner{
+.game-banner {
     padding: 24vh 0 0vh;
 }
-.game-banner .container{
+
+.game-banner .container {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 1.4vw;
 }
-.game-banner .container .col{
+
+.game-banner .container .col {
     width: 18%;
     transition: 1s all;
 
 }
-.game-banner .container .col div{
+
+.game-banner .container .col div {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.4vw;
 }
-.game-banner .container .col div img{
+
+.game-banner .container .col div img {
     width: 100%;
 }
 
@@ -554,17 +673,20 @@ span.icon {
     grid-template-columns: 1fr 2fr;
     grid-template-columns: 40% 60%;
 }
-.uiux  h2 {
+
+.uiux h2 {
     font-size: 8vw;
     line-height: 1.2;
     text-align: right;
     padding: 36px;
 }
-.uiux  h2 cite {
+
+.uiux h2 cite {
     display: block;
     font-size: 2vw;
     margin-top: 36px;
 }
+
 .uiux .images-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -573,12 +695,13 @@ span.icon {
 .uiux .images-container img {
     width: 100%;
     height: 100%;
-    align-self: stretch; 
+    align-self: stretch;
     transition: 0.3s ease-in-out;
     filter: grayscale(1);
     object-fit: cover;
 }
-.uiux .images-container img:hover{
+
+.uiux .images-container img:hover {
     filter: inherit;
 
 }
@@ -635,6 +758,18 @@ footer {
     margin-bottom: 12px;
 }
 
+@media screen and (max-width: 1440px) {
+
+    .about .quote {
+        padding: 0 40px;
+        font-size: 3vw;
+        gap: 2vw;
+    }
+
+    .about .quote .intro {
+        font-size: 2vw;
+    }
+}
 
 @media screen and (max-width: 991px) {
     .custom-cursor {
@@ -648,6 +783,7 @@ footer {
         padding: 30vh 0 20vh;
         align-items: baseline;
     }
+
     h4 {
         font-size: 6vw;
         text-align: center;
@@ -657,48 +793,91 @@ footer {
         line-height: 0.8;
         font-size: 28vw !important;
     }
+
     .banner .banner-detail {
         justify-content: center;
     }
-    .banner .banner-detail p{
+
+    .banner .banner-detail p {
         font-size: 4.5vw;
         line-height: 1.4;
         text-align: center;
         color: rgb(0, 0, 0);
     }
-    .ml7{
+
+    .ml7 {
         text-align: center;
     }
-    .scroll-down{
+
+    .scroll-down {
         bottom: 4%;
         gap: 12px;
     }
+
     .scroll-down p::before {
         bottom: -120px;
     }
-    .banner .text .welcome{
+
+    .banner .text .welcome {
         padding: 0 4vw;
         gap: 12px;
     }
-    .ml7 .letter{
+
+    .ml7 .letter {
         line-height: 0.8;
     }
+
+    .about {
+        padding-top: 8vh;
+    }
+
+    .about .quote .detail {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about .quote .mask img {
+        width: 100%;
+    }
+
+    .about .quote {
+        padding: 0 40px;
+        font-size: 4.5vw;
+        gap: 6vw;
+    }
+
+    .about .quote .mask {
+        width: 100%;
+        height: 100vw;
+    }
+
+    .about .quote .intro {
+        font-size: 3.6vw;
+    }
+
     .uiux {
         min-height: inherit;
     }
-    .web{
+
+    .web {
         display: none !important;
     }
-    .works-title{
+
+    .works-title {
         display: inline-block;
         font-size: 6vw;
-        line-height: 1.2;
+        line-height: 1.1;
     }
+
+    .works-item .works-text .hashtag span {
+        font-size: 3vw;
+    }
+
     .works-item .works-text span {
         font-size: 4vw;
     }
 
-    .work-btn{
+    .work-btn {
         display: none;
     }
 
@@ -710,7 +889,7 @@ footer {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: flex-start;
-        padding: 0 40px;
+        padding: 0 32px;
         gap: 12px;
     }
 
@@ -718,7 +897,7 @@ footer {
         flex-direction: column;
     }
 
-    .works-container{
+    .works-container {
         padding: 8vh 0;
         gap: 60px;
     }
@@ -726,16 +905,19 @@ footer {
     .works-container .title-container {
         font-size: 22vw;
     }
-    .works-container .title-container header{
+
+    .works-container .title-container header {
         padding-bottom: 0;
     }
+
     .works-container .title-container header h2,
-    .game-banner .title-container header h2{
+    .game-banner .title-container header h2 {
         transition: 1s 0.2s ease;
         opacity: 0;
     }
+
     .works-container .title-container header.is-inview h2,
-    .game-banner .title-container.is-inview header h2{
+    .game-banner .title-container.is-inview header h2 {
         opacity: 1;
     }
 
@@ -770,19 +952,22 @@ footer {
     .perm-item ul li a span {
         font-size: 6vw;
     }
-    .nav{
+
+    .nav {
         gap: 0vw;
         width: 100%;
         top: 3%;
         right: 0;
         justify-content: center;
     }
-    .nav button{
+
+    .nav button {
         font-size: 4.5vw;
         padding: 8px 12px;
         /* background-color: var(--text-white);
         color: var(--text-color); */
     }
+
     .scroll-down p,
     .scroll-down h2 {
         font-size: 11vw;
@@ -810,45 +995,57 @@ footer {
         bottom: 34vw;
         left: -24vw;
     }
+
     .work-btn a {
         font-size: 4vw;
     }
+
     .img-inner>img {
         filter: inherit;
     }
-    .footer{
+
+    .footer {
         flex-direction: column-reverse;
     }
+
     .footer-img {
         width: 100%;
         height: 40vh;
     }
+
     .footer-title header {
         font-size: 6vw;
         padding: 0 8vw;
     }
+
     .footer-title {
         width: 100%;
         margin: 8vh 0;
     }
+
     .footer-info li {
         padding: 0 8vw;
         font-size: 4vw;
     }
+
     .footer-info img {
         display: inline-block;
         width: 31vw;
     }
+
     body {
         background-size: calc(100% / 4);
     }
-    .footer-img img{
+
+    .footer-img img {
         width: 140%;
     }
+
     .uiux {
         height: initial;
         display: inline-block;
     }
+
     .uiux h2 {
         font-size: 16vw;
         line-height: 1.2;
@@ -857,26 +1054,33 @@ footer {
         transition: 1s 0.2s ease;
         opacity: 0;
     }
+
     .uiux h2.is-inview {
         opacity: 1;
     }
+
     .uiux .images-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .uiux .images-container img{
+
+    .uiux .images-container img {
         filter: inherit;
     }
-    .game-banner .container{
+
+    .game-banner .container {
         flex-wrap: wrap;
     }
-    .game-banner .container .col{
+
+    .game-banner .container .col {
         width: 40%;
     }
-    .game-banner{
+
+    .game-banner {
         padding: 8vh 0;
     }
-    .game-banner .title-container{
+
+    .game-banner .title-container {
         font-size: 22vw;
         margin-bottom: 60px;
     }
