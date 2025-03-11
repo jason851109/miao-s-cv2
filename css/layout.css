@@ -299,7 +299,6 @@ h2 .big-words {
 }
 
 .about {
-    height: 100vh;
     display: flex;
     align-items: center;
     max-width: 960px;
@@ -319,7 +318,11 @@ h2 .big-words {
     transition: 1s 0.2s ease;
     gap: 40px;
 }
-
+.about .quote .d-flex{
+    justify-content: center;
+    gap: 4vw;
+    align-items: center;
+}
 .about .quote .mask {
     mask: url("../img/profile-mask.png") no-repeat center center;
     mask-size: contain;
@@ -854,7 +857,12 @@ footer {
     .about .quote .intro {
         font-size: 3.6vw;
     }
-
+    .about .quote .d-flex{
+        justify-content: center;
+        gap: 4vw;
+        align-items: center;
+        flex-direction: column;
+    }
     .uiux {
         min-height: inherit;
     }
